@@ -82,12 +82,12 @@ Speech recognition is done by [speech_to_text][speech_to_text_link]. Please refe
 ## Usage
 
 ```dart
-  TheSpeechToTextButton(
-    onResult: (result) {
-      // Handle the result. For example, update a text field.
-    },
-    askPermissionDialogBuilder: askPermissionDialogBuilder,
-    ),
+TheSpeechToTextButton(
+  onResult: (result) {
+    // Handle the result. For example, update a text field.
+  },
+  askPermissionDialogBuilder: askPermissionDialogBuilder,
+  ),
 ```
 
 ### Ask permission dialog builder
@@ -95,25 +95,25 @@ Speech recognition is done by [speech_to_text][speech_to_text_link]. Please refe
 The `askPermissionDialogBuilder` is a function that builds a dialog to ask the user to grant permission to access the microphone and speech recognition.
 
 ```dart
-  void askPermissionDialogBuilder(void Function()? onOpenSettings) {
-    showDialog<void>(
-      context: context,
-      builder:
-          (context) => AlertDialog(
-            title: const Text('Permission required'),
-            content: const Text(
-              'Please enable microphone and speech recognition',
-            ),
-            actions: [
-              if (onOpenSettings != null)
-                TextButton(
-                  onPressed: onOpenSettings,
-                  child: const Text('Open settings'),
-                ),
-            ],
+void askPermissionDialogBuilder(void Function()? onOpenSettings) {
+  showDialog<void>(
+    context: context,
+    builder:
+        (context) => AlertDialog(
+          title: const Text('Permission required'),
+          content: const Text(
+            'Please enable microphone and speech recognition',
           ),
-    );
-  }
+          actions: [
+            if (onOpenSettings != null)
+              TextButton(
+                onPressed: onOpenSettings,
+                child: const Text('Open settings'),
+              ),
+          ],
+        ),
+  );
+}
 ```
 
 Take a note that onOpenSettings is optional. If it is not provided, the dialog will not have a button to open the settings.
