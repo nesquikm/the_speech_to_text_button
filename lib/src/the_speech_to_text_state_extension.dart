@@ -1,7 +1,9 @@
 import 'package:the_speech_to_text_button/src/the_speech_to_text_error.dart';
 import 'package:the_speech_to_text_button/src/the_speech_to_text_state.dart';
 
+/// Extension for [TheSpeechToTextState]
 extension TheSpeechToTextStateExt on TheSpeechToTextState {
+  /// Update the state with an error
   TheSpeechToTextState withError(TheSpeechToTextError error) {
     final t = switch (error.type) {
       TheSpeechToTextErrorType.permissionDenied =>
@@ -17,6 +19,7 @@ extension TheSpeechToTextStateExt on TheSpeechToTextState {
     return TheSpeechToTextState(type: t, error: error);
   }
 
+  /// Update the state with a permission error
   TheSpeechToTextState withPermissionError({
     required bool isPermanentlyDenied,
   }) {
@@ -31,6 +34,7 @@ extension TheSpeechToTextStateExt on TheSpeechToTextState {
     return withError(e);
   }
 
+  /// Clear the permission error
   TheSpeechToTextState clearPermissionError() {
     final (t, e) = (switch (error?.type) {
       TheSpeechToTextErrorType.permissionDenied => (type, null),
@@ -45,10 +49,12 @@ extension TheSpeechToTextStateExt on TheSpeechToTextState {
     return TheSpeechToTextState(type: t, error: e);
   }
 
+  /// Update the state with a status
   TheSpeechToTextState withStatus(TheSpeechToTextStateType status) {
     return TheSpeechToTextState(type: status);
   }
 
+  /// Set the state to initialized
   TheSpeechToTextState setInitialized() {
     final t = switch (type) {
       TheSpeechToTextStateType.notReady => TheSpeechToTextStateType.idle,

@@ -5,7 +5,9 @@ void main() {
   runApp(const ExampleApp());
 }
 
+/// The example app
 class ExampleApp extends StatelessWidget {
+  /// Create a new example app
   const ExampleApp({super.key});
 
   // This widget is the root of your application.
@@ -21,13 +23,16 @@ class ExampleApp extends StatelessWidget {
   }
 }
 
+/// The home page
 class MyHomePage extends StatefulWidget {
+  /// Create a new home page
   const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+/// The state of the home page
 class _MyHomePageState extends State<MyHomePage> {
   final _textController = TextEditingController();
 

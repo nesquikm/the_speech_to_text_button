@@ -9,7 +9,9 @@ import 'package:the_speech_to_text_button/src/the_speech_to_text_state.dart';
 import 'package:the_speech_to_text_button/src/the_speech_to_text_state_extension.dart';
 import 'package:the_speech_to_text_button/the_speech_to_text_button.dart';
 
+/// The speech to text button
 class TheSpeechToTextButton extends StatefulWidget {
+  /// Create a new speech to text button
   const TheSpeechToTextButton({
     super.key,
     this.builder = defaultBuilder,
@@ -20,15 +22,23 @@ class TheSpeechToTextButton extends StatefulWidget {
     this.localeId,
   });
 
+  /// The builder for the speech to text button
   final TheSpeechToTextButtonBuilder builder;
+
+  /// The on result callback
   final void Function(TheSpeechToTextResult result)? onResult;
+
+  /// The on state change callback
   final void Function(TheSpeechToTextState state)? onStateChange;
 
+  /// The ask permission dialog builder
   final void Function(void Function()? onOpenSettings)?
   askPermissionDialogBuilder;
 
+  /// The controller for the speech to text button
   final TheSpeechToTextButtonController? controller;
 
+  /// The locale id
   final String? localeId;
 
   @override

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:the_speech_to_text_button/src/the_speech_to_text_state.dart';
 
+/// The default builder for the speech to text button
 Widget defaultBuilder(
   BuildContext context, {
   required TheSpeechToTextState state,

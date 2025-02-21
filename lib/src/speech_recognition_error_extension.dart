@@ -1,7 +1,9 @@
 import 'package:speech_to_text/speech_recognition_error.dart';
 import 'package:the_speech_to_text_button/src/the_speech_to_text_error.dart';
 
+/// Extension for [SpeechRecognitionError]
 extension SpeechRecognitionErrorExt on SpeechRecognitionError {
+  /// Convert the error to a [TheSpeechToTextErrorType]
   TheSpeechToTextErrorType get toSpeechToTextErrorType {
     return switch (errorMsg) {
       /// Android errors
