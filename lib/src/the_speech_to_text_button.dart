@@ -156,9 +156,7 @@ class _TheSpeechToTextButtonState extends State<TheSpeechToTextButton>
     final onOpenSettings =
         isPermanentlyDenied && !kIsWeb ? _onOpenSettings : null;
 
-    widget.askPermissionDialogBuilder?.call(() {
-      onOpenSettings?.call();
-    });
+    widget.askPermissionDialogBuilder?.call(onOpenSettings);
 
     return false;
   }
