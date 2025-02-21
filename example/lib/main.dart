@@ -13,12 +13,9 @@ class ExampleApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Speech to text button demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
@@ -43,37 +40,37 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Speech to text button demo'),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            TextField(controller: _textController, minLines: 10, maxLines: 10),
-            TheSpeechToTextButton(
-              onResult: (result) {
-                _textController.text = result.text;
-              },
-              askPermissionDialogBuilder: (onOpenSettings) {
-                showDialog<void>(
-                  context: context,
-                  builder:
-                      (context) => AlertDialog(
-                        title: const Text('Permission required'),
-                        content: const Text(
-                          'Please enable microphone and speech recognition',
-                        ),
-                        actions: [
-                          if (onOpenSettings != null)
-                            TextButton(
-                              onPressed: onOpenSettings,
-                              child: const Text('Open settings'),
-                            ),
-                        ],
-                      ),
-                );
-              },
-            ),
-          ],
-        ),
+      body: Column(
+        children: [
+          TextField(controller: _textController, minLines: 10, maxLines: 10),
+          TheSpeechToTextButton(
+            onResult: (result) {
+              _textController.text = result.text;
+            },
+            askPermissionDialogBuilder: askPermissionDialogBuilder,
+          ),
+        ],
       ),
+    );
+  }
+
+  void askPermissionDialogBuilder(void Function()? onOpenSettings) {
+    showDialog<void>(
+      context: context,
+      builder:
+          (context) => AlertDialog(
+            title: const Text('Permission required'),
+            content: const Text(
+              'Please enable microphone and speech recognition',
+            ),
+            actions: [
+              if (onOpenSettings != null)
+                TextButton(
+                  onPressed: onOpenSettings,
+                  child: const Text('Open settings'),
+                ),
+            ],
+          ),
     );
   }
 }
