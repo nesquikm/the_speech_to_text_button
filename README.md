@@ -3,7 +3,7 @@
 [![Analyze and test all][analyze_and_test_badge]][analyze_and_test_link]
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 
-A flutter widget that transcribes speech to text.
+A Flutter widget that provides a simple button for speech-to-text transcription, handling permissions and errors across platforms.
 
 Try the [example][example_link] right away in your browser.
 
