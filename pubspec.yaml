@@ -1,5 +1,5 @@
 name: the_speech_to_text_button
-description: "A new Flutter package project."
+description: "A flutter widget that transcribes speech to text."
 version: 0.0.1
 homepage: https://github.com/nesquikm/the_speech_to_text_button
 
