@@ -5,6 +5,8 @@
 
 A flutter widget that transcribes speech to text.
 
+Try the [example][example_link] right away in your browser.
+
 ## Features
 
 - Android and iOS support
@@ -126,3 +128,4 @@ Also you can provide a controller to the button. It allows you to control the st
 [permission_handler_docs]: https://pub.dev/documentation/permission_handler/latest
 [speech_to_text_link]: https://pub.dev/packages/speech_to_text
 [speech_to_text_docs]: https://pub.dev/documentation/speech_to_text/latest
+[example_link]: https://nesquikm.github.io/the_speech_to_text_button
