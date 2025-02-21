@@ -20,6 +20,7 @@ class TheSpeechToTextButtonController
   final onStop = ChangeNotifier();
 
   /// Check permissions
+  // ignore: use_setters_to_change_properties
   void checkPermissions({bool askIfNeeded = false}) {
     onCheckPermissions.value = askIfNeeded;
   }
