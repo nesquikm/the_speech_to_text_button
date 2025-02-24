@@ -33,6 +33,7 @@ dependencies:
 
   the_speech_to_text_button:
     path: ../
+    version: 0.0.2
 
 dev_dependencies:
   flutter_lints: ^5.0.0
